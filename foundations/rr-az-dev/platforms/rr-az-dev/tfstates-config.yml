@@ -1,0 +1,4 @@
+storage_account_name: tfstates27ooy
+container_name: tfstates
+location: westeurope
+resource_group_name: cf-rr-az-dev-tfstates

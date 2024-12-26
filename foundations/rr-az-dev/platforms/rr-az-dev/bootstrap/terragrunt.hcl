@@ -37,22 +37,22 @@ EOF
 }
 
 locals {
-  location = "germanywestcentral" #TODO change, the azure location of the resource group and storage account
+  location = "westeurope" #TODO change, the azure location of the resource group and storage account
 }
 
 inputs = {
-  parent_management_group_name = "cloudfoundation-management-group" #TODO the cloudfoundation is created in a separate management group so as not to jeopardize the existing infrastructure
+  parent_management_group_name = "rr-az-dev-foundation" #TODO the cloudfoundation is created in a separate management group so as not to jeopardize the existing infrastructure (Stanley:Actully it´s mg_id)
 
   terraform_state_storage = {
     name             = "${include.platform.locals.cloudfoundation.name}"
     location         = local.location
     config_file_path = include.platform.locals.terraform_state_config_file_path # platform.hcl expects state configuration output in this location, do not change
   }
-  platform_engineers_group = "cloudfoundation-platform-engineers"
+  platform_engineers_group = "cf_platformengineers"
   platform_engineers_members = [
     {
-      email = "meshi@meshithesheep.io"              #TODO change, enter PLATFORM ENGINEERS MAIL here
-      upn   = "meshi@meshithesheep.onmicrosoft.com" #TODO change, enter PLATFORM ENGINEERS UPN here
+      email = "cf_platformengineer@retrorider.work"              #TODO change, enter PLATFORM ENGINEERS MAIL here
+      upn   = "cf_platformengineer@NETORGFT16299292.onmicrosoft.com" #TODO change, enter PLATFORM ENGINEERS UPN here
     }
   ]
   key_vault = {
