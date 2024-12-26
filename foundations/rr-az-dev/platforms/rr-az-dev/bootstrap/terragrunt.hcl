@@ -48,10 +48,10 @@ inputs = {
     location         = local.location
     config_file_path = include.platform.locals.terraform_state_config_file_path # platform.hcl expects state configuration output in this location, do not change
   }
-  platform_engineers_group = "cf_platformengineers"
+  platform_engineers_group = "cf_platformengineers" #TODO change, the name of the group that contains the platform engineers
   platform_engineers_members = [
     {
-      email = "cf_platformengineer@retrorider.work"              #TODO change, enter PLATFORM ENGINEERS MAIL here
+      email = "cf_platformengineer@retrorider.work"              #TODO change, enter PLATFORM ENGINEERS MAIL here, upn should not include "-".
       upn   = "cf_platformengineer@NETORGFT16299292.onmicrosoft.com" #TODO change, enter PLATFORM ENGINEERS UPN here
     }
   ]
